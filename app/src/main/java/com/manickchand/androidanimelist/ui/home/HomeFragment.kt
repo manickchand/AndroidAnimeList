@@ -69,15 +69,20 @@ class HomeFragment : Fragment() {
 
             layoutManager = GridLayoutManager(activity, 3, RecyclerView.VERTICAL, false)
             setHasFixedSize(true)
-
+            isNestedScrollingEnabled = false
             addOnScrollListener(object : RecyclerView.OnScrollListener() {
                 override fun onScrolled(
                     recyclerView: RecyclerView, dx: Int, dy: Int
                 ) {
                     if (dy > 0)
                     {
+
                         totalItemCount = layoutManager!!.itemCount
                         pastVisiblesItems = (layoutManager as LinearLayoutManager).findLastVisibleItemPosition()
+
+                        Log.i(TAG_DEBUC, "pastVisiblesItems ${pastVisiblesItems}")
+                        Log.i(TAG_DEBUC, "totalItemCount{totalItemCount}")
+
 
                         if (!loading) {
                             if (pastVisiblesItems >= totalItemCount-1) {
@@ -90,6 +95,8 @@ class HomeFragment : Fragment() {
                     }
                 }
             })
+
+
             adapter = TopAnimesAdapter(context, mList){ anime ->
 //                val intent = DetailsActivity.getStartIntent(this@HerosActivity, hero)
 //                this@HerosActivity.startActivity(intent)
