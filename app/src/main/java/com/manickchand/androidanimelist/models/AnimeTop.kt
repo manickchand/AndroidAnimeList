@@ -12,7 +12,7 @@ data class AnimeTop  (
     var image_url:String?,
     var episodes:Int?,
     var url:String?,
-    var score:Long?,
+    var score:Double?,
     var start_date:String?,
     var end_date:String?,
     var members:Int?

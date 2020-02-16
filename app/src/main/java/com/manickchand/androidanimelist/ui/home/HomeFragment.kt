@@ -1,17 +1,19 @@
 package com.manickchand.androidanimelist.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.manickchand.androidanimelist.R
 import com.manickchand.androidanimelist.models.AnimeTop
+import com.manickchand.androidanimelist.util.TAG_DEBUC
 import com.manickchand.androidanimelist.util.hasInternet
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -42,7 +44,7 @@ class HomeFragment : Fragment() {
 
         setupRecyclerView()
 
-        homeViewModel.herosLiveData.observe(this, Observer {
+        homeViewModel.animesLiveData.observe(this, Observer {
             it?.let { heros ->
                 mList.addAll(heros)
                 rv_top_anime.adapter!!.notifyDataSetChanged()
@@ -64,7 +66,7 @@ class HomeFragment : Fragment() {
 
         with(rv_top_anime){
 
-            layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL,false)
+            layoutManager = GridLayoutManager(activity, 3, RecyclerView.VERTICAL, false)
             setHasFixedSize(true)
 
             addOnScrollListener(object : RecyclerView.OnScrollListener() {
@@ -87,11 +89,12 @@ class HomeFragment : Fragment() {
                     }
                 }
             })
-
-//            adapter = HerosAdapter(this@HerosActivity, mList){ hero ->
+            adapter = TopAnimesAdapter(context, mList){ anime ->
 //                val intent = DetailsActivity.getStartIntent(this@HerosActivity, hero)
 //                this@HerosActivity.startActivity(intent)
-//            }
+                Log.i(TAG_DEBUC, "Clicou ${anime.title}")
+            }
+
         }
     }
 

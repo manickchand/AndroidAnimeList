@@ -14,7 +14,7 @@ import retrofit2.Response
 
 class HomeViewModel : ViewModel() {
 
-    val herosLiveData: MutableLiveData<List<AnimeTop>> = MutableLiveData()
+    val animesLiveData: MutableLiveData<List<AnimeTop>> = MutableLiveData()
     val hasErrorLiveData: MutableLiveData<Boolean> = MutableLiveData()
 
     fun getTopAnimes(){
@@ -34,7 +34,7 @@ class HomeViewModel : ViewModel() {
                 if(response.isSuccessful){
                     hasErrorLiveData.value = false
                     val animesTop = response.body()?.top ?: emptyList()
-                    herosLiveData.value = animesTop
+                    animesLiveData.value = animesTop
                 }else{
                     Log.e(TAG_DEBUC,"[Response getTopAnimes Error] code: "+response.code())
                     hasErrorLiveData.value = true
