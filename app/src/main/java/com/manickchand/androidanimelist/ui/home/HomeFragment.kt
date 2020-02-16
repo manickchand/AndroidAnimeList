@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -22,9 +23,9 @@ class HomeFragment : Fragment() {
     private lateinit var homeViewModel: HomeViewModel
     private var mList:MutableList<AnimeTop> = ArrayList()
     var pastVisiblesItems = 0
-    var totalItemCount:Int = 0
-    //var offset = 0
+    var totalItemCount = 0
     private var loading = false
+    private var pageLoad = 1
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,16 +46,16 @@ class HomeFragment : Fragment() {
         setupRecyclerView()
 
         homeViewModel.animesLiveData.observe(this, Observer {
-            it?.let { heros ->
-                mList.addAll(heros)
+            it?.let { animes ->
+                mList.addAll(animes)
                 rv_top_anime.adapter!!.notifyDataSetChanged()
                 loading = false
             }
         })
 
         homeViewModel.hasErrorLiveData.observe(this, Observer {error ->
-            //            swiperefresh.isRefreshing = false
-//            changeLayout(error)
+            pb_top_animes.visibility = View.GONE
+            if (error) Toast.makeText(context, "Error get top animes !", Toast.LENGTH_SHORT).show()
         })
 
         checkConnection()
@@ -82,8 +83,8 @@ class HomeFragment : Fragment() {
                             if (pastVisiblesItems >= totalItemCount-1) {
 
                                 loading = true
-//                                offset+= CHARACTER_LIMIT
-//                                checkConnection()
+                                pageLoad ++
+                                checkConnection()
                             }
                         }
                     }
@@ -100,11 +101,11 @@ class HomeFragment : Fragment() {
 
     fun checkConnection(){
         if(hasInternet(activity)){
-            //swiperefresh.isRefreshing = true
-            homeViewModel.getTopAnimes()
-            //changeLayout(false)
+            pb_top_animes.visibility = View.VISIBLE
+            homeViewModel.getTopAnimes(pageLoad)
         }else{
-            //changeLayout(true)
+            pb_top_animes.visibility = View.GONE
+            Toast.makeText(context, "Connection error !", Toast.LENGTH_SHORT).show()
         }
     }
 

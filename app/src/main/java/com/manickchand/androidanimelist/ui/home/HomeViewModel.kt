@@ -17,9 +17,9 @@ class HomeViewModel : ViewModel() {
     val animesLiveData: MutableLiveData<List<AnimeTop>> = MutableLiveData()
     val hasErrorLiveData: MutableLiveData<Boolean> = MutableLiveData()
 
-    fun getTopAnimes(){
+    fun getTopAnimes(page:Int){
 
-        RetrofitInit.service.getTop(ETopType.anime.toString()).enqueue(object:
+        RetrofitInit.service.getTop(ETopType.anime.toString(), page).enqueue(object:
             Callback<TopResponse> {
 
             override fun onFailure(call: Call<TopResponse>, t: Throwable) {

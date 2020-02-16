@@ -7,7 +7,7 @@ import retrofit2.http.Path
 
 interface IServiceRetrofit {
 
-    @GET("top/{type}")
-    fun getTop(@Path("type") type:String): Call<TopResponse>
+    @GET("top/{type}/{page}")
+    fun getTop(@Path("type") type:String, @Path("page") page:Int): Call<TopResponse>
 
 }
