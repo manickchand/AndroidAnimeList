@@ -5,42 +5,113 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:id="@+id/rl_slider_home"
+    <ViewFlipper
+        android:id="@+id/viewFlipper"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintHeight_percent="0.40"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:flipInterval="3000">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/naruto" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorBlack60"
+                android:gravity="center"
+                android:text="Naruto Shippuden"
+                android:textColor="@color/colorWhite"
+                android:textSize="36sp"
+                app:fontFamily="sans-serif-condensed-medium" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         >
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/berserk" />
 
-<!--        <android.support.v4.view.ViewPager-->
-<!--            android:id="@+id/pager"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent">-->
-
-<!--        </android.support.v4.view.ViewPager>-->
-
-<!--        <ImageView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:adjustViewBounds="true"-->
-<!--            android:scaleType="centerCrop"-->
-<!--            app:srcCompat="@drawable/wallpaper_top" />-->
-
-<!--        <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:background="@color/colorBlack60"-->
-<!--            android:gravity="center"-->
-<!--            android:text="Naruto Shippuden"-->
-<!--            android:textColor="@color/colorWhite"-->
-<!--            android:textSize="36sp"-->
-<!--            app:fontFamily="sans-serif-condensed-medium" />-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlack60"
+            android:gravity="center"
+            android:text="Berserk"
+            android:textColor="@color/colorWhite"
+            android:textSize="36sp"
+            app:fontFamily="sans-serif-condensed-medium" />
 
     </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/bleach" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorBlack60"
+                android:gravity="center"
+                android:text="Bleach"
+                android:textColor="@color/colorWhite"
+                android:textSize="36sp"
+                app:fontFamily="sans-serif-condensed-medium" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/dragonball" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorBlack60"
+                android:gravity="center"
+                android:text="Dragon Ball Z"
+                android:textColor="@color/colorWhite"
+                android:textSize="36sp"
+                app:fontFamily="sans-serif-condensed-medium" />
+
+        </RelativeLayout>
+
+    </ViewFlipper>
 
 
 <!--    <androidx.core.widget.NestedScrollView-->
@@ -59,7 +130,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.65"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rl_slider_home"
+            app:layout_constraintTop_toBottomOf="@id/viewFlipper"
             android:orientation="vertical">
 
                 <androidx.appcompat.widget.AppCompatTextView
