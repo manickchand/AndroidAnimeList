@@ -2,7 +2,6 @@ package com.manickchand.androidanimelist.ui.home
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.manickchand.androidanimelist.R
 import com.manickchand.androidanimelist.models.AnimeSlider
 import com.manickchand.androidanimelist.models.AnimeTop
-import com.manickchand.androidanimelist.util.TAG_DEBUC
+import com.manickchand.androidanimelist.ui.animeDetails.AnimeDetailActivity
 import com.manickchand.androidanimelist.util.hasInternet
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -100,7 +99,8 @@ class HomeFragment : Fragment() {
 
 
             adapter = TopAnimesAdapter(context, mList){ anime ->
-                Log.i(TAG_DEBUC, "Clicou ${anime.title}")
+                val intent = AnimeDetailActivity.getStartIntent(activity!!, anime.mal_id!!)
+                activity!!.startActivity(intent)
             }
 
         }
