@@ -15,22 +15,30 @@
         app:layout_constraintTop_toTopOf="parent"
         >
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/wallpaper_top" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorBlack60"
-            android:gravity="center"
-            android:text="Naruto Shippuden"
-            android:textColor="@color/colorWhite"
-            android:textSize="36sp"
-            app:fontFamily="sans-serif-condensed-medium" />
+<!--        <android.support.v4.view.ViewPager-->
+<!--            android:id="@+id/pager"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
+
+<!--        </android.support.v4.view.ViewPager>-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:adjustViewBounds="true"-->
+<!--            android:scaleType="centerCrop"-->
+<!--            app:srcCompat="@drawable/wallpaper_top" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@color/colorBlack60"-->
+<!--            android:gravity="center"-->
+<!--            android:text="Naruto Shippuden"-->
+<!--            android:textColor="@color/colorWhite"-->
+<!--            android:textSize="36sp"-->
+<!--            app:fontFamily="sans-serif-condensed-medium" />-->
 
     </RelativeLayout>
 

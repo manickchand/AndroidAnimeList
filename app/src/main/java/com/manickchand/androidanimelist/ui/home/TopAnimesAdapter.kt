@@ -48,6 +48,7 @@ class TopAnimesAdapter(context: Context,
                              private val onItemClickListener: ((anime: AnimeTop) -> Unit)) :RecyclerView.ViewHolder(itemView){
 
         private var ivAnime: ImageView = itemView.iv_anime
+        private val tvTopScore = itemView.tv_top_score
 
         fun bindAnime(anime: AnimeTop) {
 
@@ -56,6 +57,8 @@ class TopAnimesAdapter(context: Context,
             }catch (e:Exception){
                 e.stackTrace
             }
+
+            tvTopScore.text = anime.score.toString()
 
             itemView.setOnClickListener{
                 onItemClickListener.invoke(anime)
