@@ -19,7 +19,7 @@ class TopAnimesAdapter(context: Context,
 
     private var mContext =context
     private var mList = list
-    private var mlayoutInflater: LayoutInflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater //
+    private val mlayoutInflater: LayoutInflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater //
     private lateinit var mView: View
     private var lastPosition = -1
 

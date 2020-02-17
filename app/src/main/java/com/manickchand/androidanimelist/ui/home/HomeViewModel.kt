@@ -3,6 +3,8 @@ package com.manickchand.androidanimelist.ui.home
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.manickchand.androidanimelist.R
+import com.manickchand.androidanimelist.models.AnimeSlider
 import com.manickchand.androidanimelist.models.AnimeTop
 import com.manickchand.androidanimelist.models.TopResponse
 import com.manickchand.androidanimelist.repository.RetrofitInit
@@ -14,8 +16,9 @@ import retrofit2.Response
 
 class HomeViewModel : ViewModel() {
 
-    val animesLiveData: MutableLiveData<List<AnimeTop>> = MutableLiveData()
-    val hasErrorLiveData: MutableLiveData<Boolean> = MutableLiveData()
+    val animesLiveData = MutableLiveData<List<AnimeTop>>()
+    val hasErrorLiveData = MutableLiveData<Boolean>()
+    val animeSliderLiveData = MutableLiveData<List<AnimeSlider>>()
 
     fun getTopAnimes(page:Int){
 
@@ -41,5 +44,15 @@ class HomeViewModel : ViewModel() {
                 }
             }
         })
+    }
+
+    fun getSliderAnimes(){
+
+        animeSliderLiveData.value = listOf(
+                AnimeSlider(R.drawable.naruto, R.string.naruto),
+                AnimeSlider(R.drawable.berserk, R.string.berserk),
+                AnimeSlider(R.drawable.bleach, R.string.bleach),
+                AnimeSlider(R.drawable.dragonball, R.string.dragonball)
+            )
     }
 }
