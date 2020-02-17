@@ -4,4 +4,9 @@
     <string name="title_seasons">Seasons</string>
     <string name="title_notifications">Notifications</string>
     <string name="top_animes">Top Animes</string>
+
+    <string name="naruto">Naruto Shippuden</string>
+    <string name="berserk">Berserk</string>
+    <string name="bleach">Bleach</string>
+    <string name="dragonball">Dragon Ball Z</string>
 </resources>

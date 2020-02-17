@@ -1,11 +1,13 @@
 package com.manickchand.androidanimelist.ui.home
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -27,6 +29,8 @@ class HomeFragment : Fragment() {
     var totalItemCount = 0
     private var loading = false
     private var pageLoad = 1
+    private val arrayImg = arrayOf(R.drawable.naruto, R.drawable.berserk, R.drawable. bleach, R.drawable.dragonball)
+    private val arrayName = arrayOf(R.string.naruto, R.string.berserk, R.string. bleach, R.string.dragonball)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,16 +41,13 @@ class HomeFragment : Fragment() {
         homeViewModel =
             ViewModelProviders.of(this).get(HomeViewModel::class.java)
 
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
-
-        return root
+        return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         setupRecyclerView()
-
-        viewFlipper.isAutoStart = true
+        setupViewFlipper()
 
         homeViewModel.animesLiveData.observe(this, Observer {
             it?.let { animes ->
@@ -83,10 +84,6 @@ class HomeFragment : Fragment() {
                         totalItemCount = layoutManager!!.itemCount
                         pastVisiblesItems = (layoutManager as LinearLayoutManager).findLastVisibleItemPosition()
 
-                        Log.i(TAG_DEBUC, "pastVisiblesItems ${pastVisiblesItems}")
-                        Log.i(TAG_DEBUC, "totalItemCount{totalItemCount}")
-
-
                         if (!loading) {
                             if (pastVisiblesItems >= totalItemCount-1) {
 
@@ -101,8 +98,6 @@ class HomeFragment : Fragment() {
 
 
             adapter = TopAnimesAdapter(context, mList){ anime ->
-//                val intent = DetailsActivity.getStartIntent(this@HerosActivity, hero)
-//                this@HerosActivity.startActivity(intent)
                 Log.i(TAG_DEBUC, "Clicou ${anime.title}")
             }
 
@@ -117,6 +112,27 @@ class HomeFragment : Fragment() {
             pb_top_animes.visibility = View.GONE
             Toast.makeText(context, "Connection error !", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    fun setupViewFlipper(){
+
+        var inflater = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater //
+
+        for (i in 0..(this.arrayImg.size-1)){
+            val view: View = inflater.inflate(R.layout.item_flipper, viewFlipper, false)
+            val img = view.findViewById(R.id.iv_top_img_flipper) as ImageView
+            img.setImageDrawable(resources.getDrawable(this.arrayImg[i]))
+
+            val tvName = view.findViewById(R.id.tv_top_name_flipper) as TextView
+            tvName.text = getString(this.arrayName[i])
+
+            viewFlipper.addView(view,i)
+        }
+
+        viewFlipper.setOnClickListener{
+            viewFlipper.showNext()
+        }
+
     }
 
 }
