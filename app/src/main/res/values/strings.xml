@@ -10,5 +10,7 @@
     <string name="bleach">Bleach</string>
     <string name="dragonball">Dragon Ball Z</string>
 
+    <string name="episodes">Episodes</string>
+
     <string name="action_settings">Settings</string>
 </resources>

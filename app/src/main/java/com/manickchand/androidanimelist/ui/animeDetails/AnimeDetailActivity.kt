@@ -24,8 +24,8 @@ class AnimeDetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_anime_detail)
         setSupportActionBar(toolbar)
         title = ""
+
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-//        supportActionBar!!.setDisplayShowTitleEnabled(false)
         toolbar.setNavigationOnClickListener {
             finish()
         }
@@ -55,9 +55,12 @@ class AnimeDetailActivity : AppCompatActivity() {
         loadImageView(iv_anime_img_detail, anime.image_url)
 
         tv_anime_detail_score.text = anime.score.toString()
-        //tv_anime_title_detail.text = anime.title
         title = anime.title
         tv_anime_detail_description.text = anime.synopsis
+        tv_anime_rank_detail.text = anime.rank.toString()
+        tv_anime_favorite_detail.text = anime.favorites.toString()
+
+        tv_anime_episodes_detail.text = anime.episodes.toString() +" "+ getString(R.string.episodes)
     }
 
     companion object {

@@ -13,5 +13,8 @@ data class AnimeDetail  (
     var title:String?,
     var score:Double?,
     var synopsis:String?,
+    var episodes:Int?,
+    var favorites:Int?,
+    var rank:Int?,
     var genres:List<Genre>?
     ): Parcelable
