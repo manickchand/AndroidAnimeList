@@ -9,7 +9,6 @@
     <string name="berserk">Berserk</string>
     <string name="bleach">Bleach</string>
     <string name="dragonball">Dragon Ball Z</string>
-    <string name="title_activity_anime_detail">AnimeDetailActivity</string>
 
     <string name="action_settings">Settings</string>
 </resources>
