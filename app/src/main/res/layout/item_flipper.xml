@@ -16,7 +16,7 @@
         android:id="@+id/tv_top_name_flipper"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorBlack60"
+        android:background="@color/colorTopAlphaBlue"
         android:gravity="center"
         android:text="Anime"
         android:textColor="@color/colorWhite"

@@ -9,10 +9,22 @@
     tools:context=".ui.animeDetails.AnimeDetailActivity"
     tools:showIn="@layout/activity_anime_detail">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:text="@string/large_text" />
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginLeft="8dp"-->
+<!--        android:layout_marginRight="8dp"-->
+<!--        >-->
+        <TextView
+            android:id="@+id/tv_anime_detail_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:textColor="#737B9F"
+            android:text="Anime Description"
+             />
+
+<!--    </RelativeLayout>-->
+
 
 </androidx.core.widget.NestedScrollView>

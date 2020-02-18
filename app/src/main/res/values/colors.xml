@@ -7,5 +7,5 @@
     <color name="colorBackgroundBottomBar">#060A19</color>
     <color name="colorWhite">#ffffff</color>
     <color name="transparent">#00070F31</color>
-    <color name="colorBlack60">#B3033A74</color>
+    <color name="colorTopAlphaBlue">#B3033A74</color>
 </resources>

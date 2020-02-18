@@ -23,12 +23,10 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             >
 
-
             <RelativeLayout
                 android:id="@+id/rl_anime_detail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorBlack60"
                 >
 
                 <ImageView
@@ -36,13 +34,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
+                    android:tint="@color/colorTopAlphaBlue"
                     />
 
-<!--                <View-->
-<!--                    android:id="@+id/view"-->
-<!--                    android:textColor="@color/colorPrimary"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent" />-->
+                <ImageButton
+                    android:id="@+id/iv_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_anchorGravity="center"
+                    android:background="@color/transparent"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    app:srcCompat="@drawable/ic_backspace_white_36dp" />
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="80dp"
@@ -54,10 +57,10 @@
                     app:cardBackgroundColor="@color/colorWhite">
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/tv_top_score"
+                        android:id="@+id/tv_anime_detail_score"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="8.67"
+                        android:text="10.0"
                         android:background="@color/colorWhite"
                         android:textColor="@color/colorPrimary"
                         android:layout_gravity="center"
@@ -68,7 +71,18 @@
                 </androidx.cardview.widget.CardView>
 
 
-
+                <TextView
+                    android:id="@+id/tv_anime_title_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:text="Anime"
+                    android:textColor="@color/colorWhite"
+                    android:background="@color/transparent"
+                    android:textSize="36sp"
+                    android:layout_marginBottom="40dp"
+                    android:layout_marginLeft="20dp"
+                    app:fontFamily="sans-serif-condensed-medium" />
 
             </RelativeLayout>
 
