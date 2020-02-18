@@ -2,13 +2,18 @@ package com.manickchand.androidanimelist.ui.animeDetails
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.snackbar.Snackbar
 import com.manickchand.androidanimelist.R
 import com.manickchand.androidanimelist.models.AnimeDetail
+import com.manickchand.androidanimelist.util.TAG_DEBUC
+import com.manickchand.androidanimelist.util.loadImageView
+import com.manickchand.androidanimelist.util.videoUrlToThumbUrl
 import kotlinx.android.synthetic.main.activity_anime_detail.*
 
 class AnimeDetailActivity : AppCompatActivity() {
@@ -19,7 +24,7 @@ class AnimeDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_anime_detail)
-        setSupportActionBar(toolbar)
+       // setSupportActionBar(toolbar)
 
         animeDetailViewModel = ViewModelProviders.of(this).get(AnimeDetailViewModel::class.java)
 
@@ -27,14 +32,15 @@ class AnimeDetailActivity : AppCompatActivity() {
 
         animeDetailViewModel.animesDetailLiveData.observe(this, Observer {
             anime = it
+
+            val url = videoUrlToThumbUrl(anime.trailer_url!!)
+            loadImageView(iv_anime_video_thumb, url)
+
+            //Log.i(TAG_DEBUC, ""+it.title)
         })
 
         animeDetailViewModel.getAnime(animeId)
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
     }
 
     companion object {

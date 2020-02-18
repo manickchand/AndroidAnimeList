@@ -6,7 +6,6 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class AnimeDetail  (
     var mal_id:Int?,
-    var name:String,
     var description:String,
     var modified:String?,
     var image_url:String?,

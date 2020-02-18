@@ -10,3 +10,8 @@ fun loadImageView(image: ImageView, imageUrl: String?) {
         .error(R.drawable.placeholder)
         .into(image)
 }
+
+fun videoUrlToThumbUrl(videoUrl: String): String {
+    val videoId = videoUrl.substringAfterLast('/').substringBefore('?')
+    return "https://img.youtube.com/vi/$videoId/0.jpg"
+}
