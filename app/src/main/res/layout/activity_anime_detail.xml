@@ -126,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_award"
                 android:layout_gravity="center_vertical"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginLeft="32dp"
                 android:layout_toRightOf="@+id/iv_anime_img_detail"
                 />
@@ -184,6 +184,16 @@
                 android:layout_below="@+id/heart"
                 />
 
+
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/flexboxlayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:flexDirection="row"
+                app:flexWrap="wrap"
+                android:layout_toRightOf="@+id/iv_anime_img_detail"
+                android:layout_below="@+id/tv_anime_episodes_detail"/>
+
             <TextView
                 android:id="@+id/tv_synopsis_txt"
                 android:layout_width="wrap_content"
@@ -191,6 +201,7 @@
                 android:text="Synopsis"
                 android:textColor="@color/colorWhite"
                 android:textSize="26sp"
+                android:layout_marginTop="16dp"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@+id/iv_anime_img_detail"
                 app:fontFamily="sans-serif-condensed-medium"

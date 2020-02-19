@@ -4,12 +4,17 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
 import android.view.WindowManager
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.manickchand.androidanimelist.R
 import com.manickchand.androidanimelist.models.AnimeDetail
+import com.manickchand.androidanimelist.models.Genre
+import com.manickchand.androidanimelist.util.getGenreColor
 import com.manickchand.androidanimelist.util.loadImageView
 import com.manickchand.androidanimelist.util.videoUrlToThumbUrl
 import kotlinx.android.synthetic.main.activity_anime_detail.*
@@ -61,6 +66,24 @@ class AnimeDetailActivity : AppCompatActivity() {
         tv_anime_favorite_detail.text = anime.favorites.toString()
 
         tv_anime_episodes_detail.text = anime.episodes.toString() +" "+ getString(R.string.episodes)
+
+        setGenres(anime.genres ?: emptyList())
+
+    }
+
+    fun setGenres(list:List<Genre>){
+        var inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater //
+
+        for (genre in list){
+            val view: View = inflater.inflate(R.layout.item_genre_detail, flexboxlayout, false)
+
+            val tvGenre = view.findViewById(R.id.tv_genre_detail) as TextView
+            tvGenre.text = genre.name
+            tvGenre.setTextColor(resources.getColor(getGenreColor(genre)))
+
+            flexboxlayout.addView(view)
+        }
+
     }
 
     companion object {
