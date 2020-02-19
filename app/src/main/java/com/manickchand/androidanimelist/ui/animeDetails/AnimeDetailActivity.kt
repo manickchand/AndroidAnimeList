@@ -49,11 +49,14 @@ class AnimeDetailActivity : AppCompatActivity() {
             setData(it)
         })
 
+        pb_detail_anime.visibility = View.VISIBLE
         animeDetailViewModel.getAnime(animeId)
 
     }
 
     private fun setData(anime: AnimeDetail?) {
+
+        pb_detail_anime.visibility = View.GONE
 
         val url = videoUrlToThumbUrl(anime!!.trailer_url ?: "")
         loadImageView(iv_anime_video_thumb, url)
