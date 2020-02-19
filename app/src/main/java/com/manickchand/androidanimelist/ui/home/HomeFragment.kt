@@ -97,7 +97,6 @@ class HomeFragment : Fragment() {
                 }
             })
 
-
             adapter = TopAnimesAdapter(context, mList){ anime ->
                 val intent = AnimeDetailActivity.getStartIntent(activity!!, anime.mal_id!!)
                 activity!!.startActivity(intent)
@@ -121,7 +120,10 @@ class HomeFragment : Fragment() {
 
         var inflater = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater //
 
-        for (i in 0..(list.size-1)){
+        viewFlipper.setInAnimation(activity, android.R.anim.slide_in_left)
+        viewFlipper.setOutAnimation(activity, android.R.anim.slide_out_right)
+
+        for (i in list.indices){
             val view: View = inflater.inflate(R.layout.item_flipper, viewFlipper, false)
 
             val img = view.findViewById(R.id.iv_top_img_flipper) as ImageView

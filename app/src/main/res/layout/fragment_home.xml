@@ -15,18 +15,49 @@
         app:layout_constraintTop_toTopOf="parent"
         android:autoStart="true"
         android:flipInterval="3000">
+
     </ViewFlipper>
 
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabDots"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabGravity="center"
+        app:tabPaddingStart="6dp"
+        app:tabPaddingEnd="6dp"
+        app:tabIndicator="@null"
+        app:tabBackground="@drawable/tab_selector"
+        app:layout_constraintBottom_toBottomOf="@+id/viewFlipper">
 
-<!--    <androidx.core.widget.NestedScrollView-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="0dp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHeight_percent="0.65"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/rl_slider_home"-->
-<!--        android:overScrollMode="never"-->
-<!--        app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/recently_viewed"
+        android:background="@drawable/tv_rounded_border"
+        android:textColor="@color/colorWhite"
+        android:paddingRight="16dp"
+        android:paddingLeft="16dp"
+        android:paddingBottom="4dp"
+        android:paddingTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="13sp" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -52,21 +83,16 @@
                     android:id="@+id/rv_top_anime"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
+                    android:layout_margin="8dp"
                     android:paddingBottom="?attr/actionBarSize"
                     tools:listitem="@layout/item_anime" />
         </LinearLayout>
-
-<!--    </androidx.core.widget.NestedScrollView>-->
 
     <ProgressBar
         android:id="@+id/pb_top_animes"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:visibility="gone"
-        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

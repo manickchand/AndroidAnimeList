@@ -11,6 +11,7 @@
     <string name="dragonball">Dragon Ball Z</string>
 
     <string name="episodes">Episodes</string>
+    <string name="recently_viewed">Recently viewed</string>
 
     <string name="action_settings">Settings</string>
 </resources>
