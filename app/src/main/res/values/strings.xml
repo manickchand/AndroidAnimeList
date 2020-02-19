@@ -15,6 +15,9 @@
 
     <string name="action_settings">Settings</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="spring">Spring</string>
+    <string name="summer">Summer</string>
+    <string name="winter">Winter</string>
+    <string name="fall">Fall</string>
+
 </resources>
