@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.manickchand.androidanimelist.R
+import kotlinx.android.synthetic.main.fragment_seasons.*
 
 class SeasonsFragment : Fragment() {
 
@@ -21,11 +22,13 @@ class SeasonsFragment : Fragment() {
     ): View? {
         seasonsViewModel =
             ViewModelProviders.of(this).get(SeasonsViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_seasons, container, false)
-        val textView: TextView = root.findViewById(R.id.text_seasons)
-        seasonsViewModel.text.observe(this, Observer {
-            textView.text = it
-        })
-        return root
+        return inflater.inflate(R.layout.fragment_seasons, container, false)
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        pager_seasons.adapter = ViewPagerAdapter(requireFragmentManager())
+        tabs_seasons.setupWithViewPager(pager_seasons)
     }
 }
