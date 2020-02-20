@@ -18,8 +18,8 @@
         tools:layout="@layout/fragment_seasons" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.manickchand.androidanimelist.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_search"
+        android:name="com.manickchand.androidanimelist.ui.search.SearchFragment"
+        android:label="@string/title_search"
+        tools:layout="@layout/fragment_search" />
 </navigation>

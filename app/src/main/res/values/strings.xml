@@ -2,7 +2,7 @@
     <string name="app_name">AndroidAnimeList</string>
     <string name="title_home">Home</string>
     <string name="title_seasons">Seasons</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_search">Search</string>
     <string name="top_animes">Top Animes</string>
 
     <string name="naruto">Naruto Shippuden</string>
@@ -12,8 +12,6 @@
 
     <string name="episodes">Episodes</string>
     <string name="recently_viewed">Recently viewed</string>
-
-    <string name="action_settings">Settings</string>
 
     <string name="spring">Spring</string>
     <string name="summer">Summer</string>
