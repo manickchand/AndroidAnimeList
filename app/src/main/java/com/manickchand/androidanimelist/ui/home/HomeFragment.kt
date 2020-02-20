@@ -18,10 +18,11 @@ import com.manickchand.androidanimelist.R
 import com.manickchand.androidanimelist.models.AnimeSlider
 import com.manickchand.androidanimelist.models.AnimeTop
 import com.manickchand.androidanimelist.ui.animeDetails.AnimeDetailActivity
+import com.manickchand.androidanimelist.util.IConnectionUtils
 import com.manickchand.androidanimelist.util.hasInternet
 import kotlinx.android.synthetic.main.fragment_home.*
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), IConnectionUtils {
 
     private lateinit var homeViewModel: HomeViewModel
     private var mList:MutableList<AnimeTop> = ArrayList()
@@ -105,7 +106,7 @@ class HomeFragment : Fragment() {
         }
     }
 
-    fun checkConnection(){
+    override fun checkConnection(){
         if(hasInternet(activity)){
             pb_top_animes.visibility = View.VISIBLE
             homeViewModel.getTopAnimes(pageLoad)

@@ -23,3 +23,7 @@ fun hasInternet(context: Context?): Boolean {
         return false
     }
 }
+
+interface IConnectionUtils {
+    fun checkConnection()
+}
