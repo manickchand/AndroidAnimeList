@@ -7,7 +7,7 @@
     <Transition
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@+id/start"
-        motion:duration="1000">
+        motion:duration="2000">
         <OnSwipe
             motion:dragDirection="dragRight"
             motion:touchAnchorId="@id/cl_top_seasons"
@@ -44,11 +44,16 @@
 
     <ConstraintSet android:id="@+id/start">
 
-        <Constraint android:id="@id/cl_top_seasons">
-            <CustomAttribute
-                motion:attributeName="backgroundColor"
-                motion:customColorValue="@color/blue"/>
-        </Constraint>
+        <Constraint
+            android:id="@id/tv_season_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="24dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            />
+
 
         <Constraint
             android:id="@+id/iv_season"
@@ -66,12 +71,15 @@
         android:id="@+id/end"
         motion:deriveConstraintsFrom="@id/start">
 
-        <Constraint android:id="@id/cl_top_seasons">
-
-            <CustomAttribute
-                motion:attributeName="backgroundColor"
-                motion:customColorValue="@color/red" />
-        </Constraint>
+        <Constraint
+            android:id="@id/tv_season_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="16dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            />
 
         <Constraint
             android:id="@id/iv_season"
@@ -79,7 +87,6 @@
             android:layout_height="100dp"
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"
-            android:src="@drawable/ic_winter"
             >
         </Constraint>
 
