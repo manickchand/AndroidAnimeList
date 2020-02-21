@@ -17,7 +17,7 @@ class AnimeSeasonViewModel : ViewModel() {
 
     fun getAnimesBySeason(season:String){
 
-        RetrofitInit.service.getAnimesBySeason(2020, season).enqueue(object:
+        RetrofitInit.service.getAnimesBySeason(2019, season).enqueue(object:
             Callback<SeasonResponse> {
 
             override fun onFailure(call: Call<SeasonResponse>, t: Throwable) {
