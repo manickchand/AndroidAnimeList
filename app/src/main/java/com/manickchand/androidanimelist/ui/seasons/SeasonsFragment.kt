@@ -25,49 +25,53 @@ class SeasonsFragment : Fragment() {
         pager_seasons.adapter = ViewPagerAdapter(requireFragmentManager())
         tabs_seasons.setupWithViewPager(pager_seasons)
 
-        pager_seasons.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+        pager_seasons.addOnPageChangeListener(ml_top_seasons)
 
-            override fun onPageScrollStateChanged(state: Int) {
-            }
-            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
-            }
-            override fun onPageSelected(position: Int) {
-                settupSeasonTop(position)
-            }
-
-        })
+//        pager_seasons.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+//
+//            override fun onPageScrollStateChanged(state: Int) {
+//            }
+//            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+//            }
+//            override fun onPageSelected(position: Int) {
+//                settupSeasonTop(position)
+//            }
+//
+//        })
     }
 
     fun settupSeasonTop(pos:Int){
 
-        when (pos) {
-            0 -> {
-                cl_top_seasons.background = resources.getDrawable(R.drawable.gradient_spring)
-                iv_season.setImageDrawable(resources.getDrawable(R.drawable.ic_spring))
-                tv_season_name.text = getString(R.string.spring)
-            }
-            1 -> {
-                cl_top_seasons.background = resources.getDrawable(R.drawable.gradient_summer)
-                iv_season.setImageDrawable(resources.getDrawable(R.drawable.ic_summer))
-                tv_season_name.text = getString(R.string.summer)
-            }
-            2 -> {
-                cl_top_seasons.background = resources.getDrawable(R.drawable.gradient_fall)
-                iv_season.setImageDrawable(resources.getDrawable(R.drawable.ic_fall))
-                tv_season_name.text = getString(R.string.fall)
-            }
 
-            3 -> {
-                cl_top_seasons.background = resources.getDrawable(R.drawable.gradient_winter)
-                iv_season.setImageDrawable(resources.getDrawable(R.drawable.ic_winter))
-                tv_season_name.text = getString(R.string.winter)
-            }
-            else -> {
-                cl_top_seasons.background = resources.getDrawable(R.drawable.gradient_spring)
-                iv_season.setImageDrawable(resources.getDrawable(R.drawable.ic_spring))
-                tv_season_name.text = getString(R.string.spring)
-            }
-        }
+
+//        when (pos) {
+//            0 -> {
+//                cl_top_seasons.background = resources.getDrawable(R.drawable.gradient_spring)
+//                iv_season.setImageDrawable(resources.getDrawable(R.drawable.ic_spring))
+//                tv_season_name.text = getString(R.string.spring)
+//            }
+//            1 -> {
+//                cl_top_seasons.background = resources.getDrawable(R.drawable.gradient_summer)
+//                iv_season.setImageDrawable(resources.getDrawable(R.drawable.ic_summer))
+//                tv_season_name.text = getString(R.string.summer)
+//            }
+//            2 -> {
+//                cl_top_seasons.background = resources.getDrawable(R.drawable.gradient_fall)
+//                iv_season.setImageDrawable(resources.getDrawable(R.drawable.ic_fall))
+//                tv_season_name.text = getString(R.string.fall)
+//            }
+//
+//            3 -> {
+//                cl_top_seasons.background = resources.getDrawable(R.drawable.gradient_winter)
+//                iv_season.setImageDrawable(resources.getDrawable(R.drawable.ic_winter))
+//                tv_season_name.text = getString(R.string.winter)
+//            }
+//            else -> {
+//                cl_top_seasons.background = resources.getDrawable(R.drawable.gradient_spring)
+//                iv_season.setImageDrawable(resources.getDrawable(R.drawable.ic_spring))
+//                tv_season_name.text = getString(R.string.spring)
+//            }
+//        }
 
     }
 }
