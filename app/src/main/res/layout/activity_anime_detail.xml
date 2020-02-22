@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".ui.animeDetails.AnimeDetailActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="viewModel"
+            type="com.manickchand.androidanimelist.ui.animeDetails.AnimeDetailViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
 
     <ProgressBar
         android:id="@+id/pb_detail_anime"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:visibility="gone"
+        android:visibility="@{viewModel.loading ? View.VISIBLE : View.GONE}"
         android:background="@drawable/tv_rounded_border"
         android:backgroundTint="@color/colorPrimary"
         android:layout_gravity="center" />
@@ -73,7 +81,7 @@
                         android:id="@+id/tv_anime_detail_score"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="10.0"
+                        android:text="@{viewModel.anime.score.toString()}"
                         android:background="@color/colorWhite"
                         android:textColor="@color/colorPrimary"
                         android:layout_gravity="center"
@@ -101,6 +109,7 @@
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
                 android:background="@color/transparent"
+                app:title="@{viewModel.anime.title}"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
 
@@ -144,7 +153,7 @@
                 android:id="@+id/tv_anime_rank_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1"
+                android:text="@{viewModel.anime.rank.toString()}"
                 android:textColor="@color/colorWhite"
                 android:textSize="22sp"
                 android:textStyle="bold"
@@ -169,7 +178,7 @@
                 android:id="@+id/tv_anime_favorite_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1000"
+                android:text="@{viewModel.anime.favorites.toString()}"
                 android:textColor="@color/colorWhite"
                 android:layout_gravity="center"
                 android:layout_marginLeft="8dp"
@@ -183,7 +192,7 @@
                 android:id="@+id/tv_anime_episodes_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="10 ep"
+                android:text="@{@string/episodes(viewModel.anime.episodes) }"
                 android:textColor="@color/colorWhite"
                 android:layout_gravity="center"
                 android:layout_marginLeft="32dp"
@@ -223,14 +232,13 @@
                 android:layout_margin="@dimen/text_margin"
                 android:textColor="#737B9F"
                 android:layout_below="@+id/tv_synopsis_txt"
-                android:text="Anime Synopsis"
+                android:text="@{ viewModel.anime.synopsis }"
                 />
 
         </RelativeLayout>
 
-
     </androidx.core.widget.NestedScrollView>
 
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

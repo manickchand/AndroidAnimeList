@@ -1,8 +1,7 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 29
@@ -31,6 +30,10 @@ android {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 
+    dataBinding{
+        enabled = true
+    }
+
 }
 
 dependencies {
@@ -54,6 +57,8 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
 
     implementation 'com.squareup.picasso:picasso:2.71828'
+
+    kapt 'com.android.databinding:compiler:3.1.4'
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.12'

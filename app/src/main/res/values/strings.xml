@@ -10,7 +10,7 @@
     <string name="bleach">Bleach</string>
     <string name="dragonball">Dragon Ball Z</string>
 
-    <string name="episodes">Episodes</string>
+    <string name="episodes">%1$s Episodes</string>
     <string name="recently_viewed">Recently viewed</string>
 
     <string name="spring">Spring</string>
