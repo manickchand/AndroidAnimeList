@@ -1,43 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:cardCornerRadius="8dp"
-    android:elevation="5dp"
-    android:layout_margin="8dp"
-    app:cardBackgroundColor="@android:color/transparent">
 
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="anime"
+            type="com.manickchand.androidanimelist.models.Anime" />
+    </data>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="50dp"
-        android:layout_height="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:cardCornerRadius="8dp"
-        app:cardBackgroundColor="@color/colorWhite">
+        android:elevation="5dp"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="@android:color/transparent">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_top_score"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="8.67"
-            android:background="@color/colorWhite"
-            android:textColor="@color/colorPrimary"
-            android:layout_gravity="center"
-            android:textSize="16sp"
-            android:textStyle="bold"
+        <androidx.cardview.widget.CardView
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            app:cardCornerRadius="8dp"
+            app:cardBackgroundColor="@color/colorWhite">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_top_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{anime.score.toString()}"
+                android:background="@color/colorWhite"
+                android:textColor="@color/colorPrimary"
+                android:layout_gravity="center"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/iv_anime"
+            android:layout_width="120dp"
+            android:layout_height="160dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            bind:picassoLoad="@{anime.image_url}"
             />
 
     </androidx.cardview.widget.CardView>
 
-    <ImageView
-        android:id="@+id/iv_anime"
-        android:layout_width="120dp"
-        android:layout_height="160dp"
-        android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:srcCompat="@drawable/placeholder" />
-
-</androidx.cardview.widget.CardView>
+</layout>

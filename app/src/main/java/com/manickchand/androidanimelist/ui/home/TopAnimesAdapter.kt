@@ -6,12 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.manickchand.androidanimelist.R
+import com.manickchand.androidanimelist.databinding.ItemAnimeBinding
 import com.manickchand.androidanimelist.models.Anime
-import com.manickchand.androidanimelist.util.loadImageView
-import kotlinx.android.synthetic.main.item_anime.view.*
 
 class TopAnimesAdapter(context: Context,
                        list: List<Anime>,
@@ -19,13 +16,12 @@ class TopAnimesAdapter(context: Context,
 
     private var mContext =context
     private var mList = list
-    private val mlayoutInflater: LayoutInflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater //
-    private lateinit var mView: View
     private var lastPosition = -1
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        mView = mlayoutInflater.inflate(R.layout.item_anime,parent,false)
-        return MyViewHolder(mView,onItemClickListener)
+        val inflater = LayoutInflater.from(mContext)
+        val binding = ItemAnimeBinding.inflate(inflater,parent,false)
+        return MyViewHolder(binding,onItemClickListener)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
@@ -44,26 +40,15 @@ class TopAnimesAdapter(context: Context,
 
     override fun getItemCount() = mList.count()
 
-    inner class MyViewHolder(itemView:View,
-                             private val onItemClickListener: ((anime: Anime) -> Unit)) :RecyclerView.ViewHolder(itemView){
-
-        private var ivAnime: ImageView = itemView.iv_anime
-        private val tvTopScore = itemView.tv_top_score
+    inner class MyViewHolder(private val binding: ItemAnimeBinding,
+                             private val onItemClickListener: ((anime: Anime) -> Unit)) :RecyclerView.ViewHolder(binding.root){
 
         fun bindAnime(anime: Anime) {
 
-            try {
-                loadImageView(ivAnime, anime.image_url)
-            }catch (e:Exception){
-                e.stackTrace
-            }
-
-            tvTopScore.text = anime.score.toString()
-
-            itemView.setOnClickListener{
+            binding.anime = anime
+            binding.root.setOnClickListener{
                 onItemClickListener.invoke(anime)
             }
         }
-
     }
 }
