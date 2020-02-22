@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
 
     <data>
         <import type="android.view.View"/>
+        <import type="com.manickchand.androidanimelist.util.ImageUtils"/>
 
         <variable
             name="viewModel"
@@ -55,7 +57,7 @@
                     android:scaleType="centerCrop"
                     android:fitsSystemWindows="true"
                     app:layout_collapseMode="parallax"
-                    android:src="@drawable/placeholder"
+                    bind:picassoLoad="@{ImageUtils.videoUrlToThumbUrl(viewModel.anime.trailer_url)}"
                     />
 
                 <androidx.cardview.widget.CardView
@@ -132,7 +134,7 @@
                 android:id="@+id/iv_anime_img_detail"
                 android:layout_width="130dp"
                 android:layout_height="160dp"
-                android:src="@drawable/placeholder"
+                bind:picassoLoad="@{viewModel.anime.image_url}"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="16dp"
                 android:layout_marginLeft="16dp"

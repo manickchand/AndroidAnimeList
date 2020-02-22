@@ -14,10 +14,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.manickchand.androidanimelist.R
 import com.manickchand.androidanimelist.databinding.ActivityAnimeDetailBinding
-import com.manickchand.androidanimelist.models.Anime
 import com.manickchand.androidanimelist.models.Genre
 import com.manickchand.androidanimelist.util.getGenreColor
-import com.manickchand.androidanimelist.util.videoUrlToThumbUrl
 import kotlinx.android.synthetic.main.activity_anime_detail.*
 
 
@@ -60,16 +58,6 @@ class AnimeDetailActivity : AppCompatActivity() {
 
     }
 
-    private fun setData(anime: Anime?) {
-
-        val url = videoUrlToThumbUrl(anime!!.trailer_url ?: "")
-//        loadImageView(iv_anime_video_thumb, url)
-//        loadImageView(iv_anime_img_detail, anime.image_url)
-//
-//
-//        setGenres(anime.genres ?: emptyList())
-
-    }
 
     fun setGenres(list:List<Genre>){
         var inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater //
