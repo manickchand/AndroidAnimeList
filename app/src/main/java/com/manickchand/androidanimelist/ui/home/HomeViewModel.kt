@@ -4,8 +4,8 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.manickchand.androidanimelist.R
+import com.manickchand.androidanimelist.models.Anime
 import com.manickchand.androidanimelist.models.AnimeSlider
-import com.manickchand.androidanimelist.models.AnimeTop
 import com.manickchand.androidanimelist.models.TopResponse
 import com.manickchand.androidanimelist.repository.RetrofitInit
 import com.manickchand.androidanimelist.util.TAG_DEBUC
@@ -16,7 +16,7 @@ import retrofit2.Response
 
 class HomeViewModel : ViewModel() {
 
-    val animesLiveData = MutableLiveData<List<AnimeTop>>()
+    val animesLiveData = MutableLiveData<List<Anime>>()
     val hasErrorLiveData = MutableLiveData<Boolean>()
     val animeSliderLiveData = MutableLiveData<List<AnimeSlider>>()
 

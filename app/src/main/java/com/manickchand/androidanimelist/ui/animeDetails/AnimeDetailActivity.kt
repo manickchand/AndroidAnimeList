@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.manickchand.androidanimelist.R
-import com.manickchand.androidanimelist.models.AnimeDetail
+import com.manickchand.androidanimelist.models.Anime
 import com.manickchand.androidanimelist.models.Genre
 import com.manickchand.androidanimelist.util.getGenreColor
 import com.manickchand.androidanimelist.util.loadImageView
@@ -54,7 +54,7 @@ class AnimeDetailActivity : AppCompatActivity() {
 
     }
 
-    private fun setData(anime: AnimeDetail?) {
+    private fun setData(anime: Anime?) {
 
         pb_detail_anime.visibility = View.GONE
 

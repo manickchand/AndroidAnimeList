@@ -9,13 +9,13 @@ import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.manickchand.androidanimelist.R
-import com.manickchand.androidanimelist.models.AnimeTop
+import com.manickchand.androidanimelist.models.Anime
 import com.manickchand.androidanimelist.util.loadImageView
 import kotlinx.android.synthetic.main.item_anime.view.*
 
 class TopAnimesAdapter(context: Context,
-                       list: List<AnimeTop>,
-                       val onItemClickListener:((anime:AnimeTop) -> Unit) ) : RecyclerView.Adapter<TopAnimesAdapter.MyViewHolder?>() {
+                       list: List<Anime>,
+                       val onItemClickListener:((anime:Anime) -> Unit) ) : RecyclerView.Adapter<TopAnimesAdapter.MyViewHolder?>() {
 
     private var mContext =context
     private var mList = list
@@ -45,12 +45,12 @@ class TopAnimesAdapter(context: Context,
     override fun getItemCount() = mList.count()
 
     inner class MyViewHolder(itemView:View,
-                             private val onItemClickListener: ((anime: AnimeTop) -> Unit)) :RecyclerView.ViewHolder(itemView){
+                             private val onItemClickListener: ((anime: Anime) -> Unit)) :RecyclerView.ViewHolder(itemView){
 
         private var ivAnime: ImageView = itemView.iv_anime
         private val tvTopScore = itemView.tv_top_score
 
-        fun bindAnime(anime: AnimeTop) {
+        fun bindAnime(anime: Anime) {
 
             try {
                 loadImageView(ivAnime, anime.image_url)

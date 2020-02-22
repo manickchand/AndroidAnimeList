@@ -15,8 +15,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.manickchand.androidanimelist.R
+import com.manickchand.androidanimelist.models.Anime
 import com.manickchand.androidanimelist.models.AnimeSlider
-import com.manickchand.androidanimelist.models.AnimeTop
 import com.manickchand.androidanimelist.ui.animeDetails.AnimeDetailActivity
 import com.manickchand.androidanimelist.util.IConnectionUtils
 import com.manickchand.androidanimelist.util.hasInternet
@@ -25,7 +25,7 @@ import kotlinx.android.synthetic.main.fragment_home.*
 class HomeFragment : Fragment(), IConnectionUtils {
 
     private lateinit var homeViewModel: HomeViewModel
-    private var mList:MutableList<AnimeTop> = ArrayList()
+    private var mList:MutableList<Anime> = ArrayList()
     private var pastVisiblesItems = 0
     private var totalItemCount = 0
     private var loading = false

@@ -12,7 +12,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.manickchand.androidanimelist.R
-import com.manickchand.androidanimelist.models.AnimeTop
+import com.manickchand.androidanimelist.models.Anime
 import com.manickchand.androidanimelist.ui.animeDetails.AnimeDetailActivity
 import com.manickchand.androidanimelist.ui.home.TopAnimesAdapter
 import com.manickchand.androidanimelist.util.ARG_SEASON
@@ -25,7 +25,7 @@ import kotlinx.android.synthetic.main.fragment_animes_season.*
 class AnimesSeasonFragment : Fragment(), IConnectionUtils {
 
     private var season: String? = null
-    private var mList:MutableList<AnimeTop> = ArrayList()
+    private var mList:MutableList<Anime> = ArrayList()
     private lateinit var animeSeasonViewModel: AnimeSeasonViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -3,7 +3,7 @@ package com.manickchand.androidanimelist.ui.seasons.animesSeason
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.manickchand.androidanimelist.models.AnimeTop
+import com.manickchand.androidanimelist.models.Anime
 import com.manickchand.androidanimelist.models.SeasonResponse
 import com.manickchand.androidanimelist.repository.RetrofitInit
 import com.manickchand.androidanimelist.util.TAG_DEBUC
@@ -13,7 +13,7 @@ import retrofit2.Response
 
 class AnimeSeasonViewModel : ViewModel() {
 
-    val animesLiveData = MutableLiveData<List<AnimeTop>>()
+    val animesLiveData = MutableLiveData<List<Anime>>()
 
     fun getAnimesBySeason(season:String){
 

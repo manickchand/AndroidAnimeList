@@ -4,9 +4,8 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class AnimeDetail  (
+data class Anime  (
     var mal_id:Int?,
-    var modified:String?,
     var image_url:String?,
     var trailer_url:String?,
     var url:String?,
@@ -16,5 +15,6 @@ data class AnimeDetail  (
     var episodes:Int?,
     var favorites:Int?,
     var rank:Int?,
+    var type:String?,
     var genres:List<Genre>?
     ): Parcelable
