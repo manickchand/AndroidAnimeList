@@ -1,19 +1,250 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/text_search"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Working in progress"
-        android:textAlignment="center"
-        android:textColor="@color/colorWhite"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_background">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_search"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/tv_rounded_border"
+                android:drawableLeft="@android:drawable/ic_menu_search"
+                android:gravity="center"
+                android:hint="@string/search_hint"
+                android:inputType="text"
+                android:padding="16dp"
+                android:textColor="@color/colorPrimary"
+                android:textColorHint="@color/colorWhite"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_genre_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/cl_search"
+            android:gravity="center_horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="170dp"
+                android:layout_height="120dp"
+                app:cardCornerRadius="8dp"
+                android:elevation="5dp"
+                android:layout_marginRight="8dp"
+                app:cardBackgroundColor="@color/red">
+
+                <TextView
+                    android:text="Action"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="24sp"
+                    android:padding="16dp"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="170dp"
+                android:layout_height="120dp"
+                app:cardCornerRadius="8dp"
+                android:elevation="5dp"
+                android:layout_marginLeft="8dp"
+                app:cardBackgroundColor="@color/teal">
+
+                <TextView
+                    android:text="Comedy"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="24sp"
+                    android:padding="16dp"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_genre_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/ll_genre_1"
+            android:gravity="center_horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="170dp"
+                android:layout_height="120dp"
+                app:cardCornerRadius="8dp"
+                android:elevation="5dp"
+                android:layout_marginRight="8dp"
+                app:cardBackgroundColor="@color/purple">
+
+                <TextView
+                    android:text="Sci-Fi"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="24sp"
+                    android:padding="16dp"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="170dp"
+                android:layout_height="120dp"
+                app:cardCornerRadius="8dp"
+                android:elevation="5dp"
+                android:layout_marginLeft="8dp"
+                app:cardBackgroundColor="@color/brown">
+
+                <TextView
+                    android:text="Adventure"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="24sp"
+                    android:padding="16dp"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_genre_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/ll_genre_2"
+            android:gravity="center_horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="170dp"
+                android:layout_height="120dp"
+                app:cardCornerRadius="8dp"
+                android:elevation="5dp"
+                android:layout_marginRight="8dp"
+                app:cardBackgroundColor="@color/black">
+
+                <TextView
+                    android:text="Drama"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="24sp"
+                    android:padding="16dp"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="170dp"
+                android:layout_height="120dp"
+                app:cardCornerRadius="8dp"
+                android:elevation="5dp"
+                android:layout_marginLeft="8dp"
+                app:cardBackgroundColor="@color/yellow">
+
+                <TextView
+                    android:text="Fantasy"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="24sp"
+                    android:padding="16dp"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_genre_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/ll_genre_3"
+            android:gravity="center_horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="170dp"
+                android:layout_height="120dp"
+                app:cardCornerRadius="8dp"
+                android:elevation="5dp"
+                android:layout_marginRight="8dp"
+                app:cardBackgroundColor="@color/blue">
+
+                <TextView
+                    android:text="Shounen"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="24sp"
+                    android:padding="16dp"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="170dp"
+                android:layout_height="120dp"
+                app:cardCornerRadius="8dp"
+                android:elevation="5dp"
+                android:layout_marginLeft="8dp"
+                app:cardBackgroundColor="@color/lightRed">
+
+                <TextView
+                    android:text="Romance"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="24sp"
+                    android:padding="16dp"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/recyclerViewMenu"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            app:layout_constraintHeight_percent="0.2"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/cl_search"-->
+<!--            android:overScrollMode="never"-->
+<!--            android:paddingStart="8dp"-->
+<!--            android:paddingEnd="8dp"-->
+<!--            app:layoutManager="GridLayoutManager"-->
+<!--            tools:listitem="@layout/item_genre"-->
+<!--            tools:spanCount="2" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

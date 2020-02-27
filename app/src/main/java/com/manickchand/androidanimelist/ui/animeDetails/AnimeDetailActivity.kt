@@ -26,9 +26,8 @@ class AnimeDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_anime_detail)
-        setSupportActionBar(toolbar)
 
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        setSupportActionBar(toolbar)
         toolbar.setNavigationOnClickListener {
             finish()
         }

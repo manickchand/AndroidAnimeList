@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="anime"
+            type="com.manickchand.androidanimelist.models.Anime" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="170dp"
+        android:layout_height="120dp"
+        app:cardCornerRadius="8dp"
+        android:elevation="5dp"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="@color/teal">
+
+        <TextView
+            android:id="@+id/tv_genre"
+            android:text="Action"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorTopAlphaBlue"
+            android:textSize="24sp"
+            android:padding="16dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

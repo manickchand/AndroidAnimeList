@@ -16,6 +16,7 @@
         app:cardCornerRadius="8dp"
         android:elevation="5dp"
         android:layout_margin="8dp"
+        android:foreground="?android:attr/selectableItemBackground"
         app:cardBackgroundColor="@android:color/transparent">
 
         <androidx.cardview.widget.CardView
@@ -44,6 +45,7 @@
             android:layout_height="160dp"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
+            android:src="@drawable/placeholder"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"

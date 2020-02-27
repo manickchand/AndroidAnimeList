@@ -30,6 +30,7 @@
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/app_bar_height"
+        android:background="@color/transparent"
         android:fitsSystemWindows="true"
         android:theme="@style/AppTheme.AppBarOverlay">
 
@@ -110,6 +111,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
+                app:navigationIcon="?homeAsUpIndicator"
                 android:background="@color/transparent"
                 app:title="@{viewModel.anime.title}"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
