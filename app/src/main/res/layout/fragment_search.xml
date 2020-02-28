@@ -52,6 +52,12 @@
                 android:layout_marginRight="8dp"
                 app:cardBackgroundColor="@color/red">
 
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="top|right"
+                    android:src="@drawable/ic_acao"/>
+
                 <TextView
                     android:text="Action"
                     android:textColor="@color/colorWhite"
@@ -71,6 +77,12 @@
                 android:elevation="5dp"
                 android:layout_marginLeft="8dp"
                 app:cardBackgroundColor="@color/teal">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="top|right"
+                    android:src="@drawable/ic_comedia"/>
 
                 <TextView
                     android:text="Comedy"
@@ -101,6 +113,12 @@
                 android:layout_marginRight="8dp"
                 app:cardBackgroundColor="@color/purple">
 
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="top|right"
+                    android:src="@drawable/ic_scifi"/>
+
                 <TextView
                     android:text="Sci-Fi"
                     android:textColor="@color/colorWhite"
@@ -120,6 +138,12 @@
                 android:elevation="5dp"
                 android:layout_marginLeft="8dp"
                 app:cardBackgroundColor="@color/brown">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="top|right"
+                    android:src="@drawable/ic_aventura"/>
 
                 <TextView
                     android:text="Adventure"
@@ -150,6 +174,12 @@
                 android:layout_marginRight="8dp"
                 app:cardBackgroundColor="@color/black">
 
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="top|right"
+                    android:src="@drawable/ic_drama"/>
+
                 <TextView
                     android:text="Drama"
                     android:textColor="@color/colorWhite"
@@ -169,6 +199,12 @@
                 android:elevation="5dp"
                 android:layout_marginLeft="8dp"
                 app:cardBackgroundColor="@color/yellow">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="top|right"
+                    android:src="@drawable/ic_fantasia"/>
 
                 <TextView
                     android:text="Fantasy"
@@ -199,8 +235,14 @@
                 android:layout_marginRight="8dp"
                 app:cardBackgroundColor="@color/blue">
 
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="top|right"
+                    android:src="@drawable/ic_musica" />
+
                 <TextView
-                    android:text="Shounen"
+                    android:text="Music"
                     android:textColor="@color/colorWhite"
                     android:textSize="24sp"
                     android:padding="16dp"
@@ -218,6 +260,12 @@
                 android:elevation="5dp"
                 android:layout_marginLeft="8dp"
                 app:cardBackgroundColor="@color/lightRed">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="top|right"
+                    android:src="@drawable/ic_romance"/>
 
                 <TextView
                     android:text="Romance"
