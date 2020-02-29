@@ -15,7 +15,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.manickchand.androidanimelist.R
 import com.manickchand.androidanimelist.databinding.ActivityAnimeDetailBinding
 import com.manickchand.androidanimelist.models.Genre
-import com.manickchand.androidanimelist.util.getGenreColor
+import com.manickchand.androidanimelist.util.GenreUtils.Companion.getGenreColor
 import kotlinx.android.synthetic.main.activity_anime_detail.*
 
 
@@ -57,7 +57,7 @@ class AnimeDetailActivity : AppCompatActivity() {
 
     }
 
-
+    //todo binding
     fun setGenres(list:List<Genre>){
         var inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater //
 

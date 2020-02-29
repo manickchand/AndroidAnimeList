@@ -29,6 +29,12 @@ class ImageUtils {
                 return ""
             }
         }
+
+        @JvmStatic
+        @BindingAdapter("bind:src")
+        fun setImageResource( iv: ImageView,  image: Int ) {
+            iv.setImageResource( image )
+        }
     }
 }
 

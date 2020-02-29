@@ -5,26 +5,33 @@
     xmlns:bind="http://schemas.android.com/tools">
 
     <data>
+        <import type="com.manickchand.androidanimelist.util.GenreUtils"/>
+
         <variable
-            name="anime"
-            type="com.manickchand.androidanimelist.models.Anime" />
+            name="genre"
+            type="com.manickchand.androidanimelist.models.Genre" />
     </data>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="170dp"
-        android:layout_height="120dp"
-        app:cardCornerRadius="8dp"
-        android:elevation="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:cardBackgroundColor="@color/teal">
+        app:contentPadding="4dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        bind:cardBackgroundColor="@{GenreUtils.getGenreColor(genre)}">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="top|right"
+            bind:src="@{GenreUtils.getGenreImage(genre)}" />
 
         <TextView
-            android:id="@+id/tv_genre"
-            android:text="Action"
+            android:text="@{genre.name}"
             android:textColor="@color/colorWhite"
-            android:background="@color/colorTopAlphaBlue"
             android:textSize="24sp"
             android:padding="16dp"
+            android:layout_marginTop="48dp"
             android:layout_gravity="bottom|center_horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

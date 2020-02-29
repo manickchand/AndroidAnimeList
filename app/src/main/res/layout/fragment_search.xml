@@ -13,7 +13,7 @@
             android:id="@+id/cl_search"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintHeight_percent="0.20"
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.appcompat.widget.AppCompatEditText
@@ -26,7 +26,7 @@
                 android:gravity="center"
                 android:hint="@string/search_hint"
                 android:inputType="text"
-                android:padding="16dp"
+                android:padding="12dp"
                 android:textColor="@color/colorPrimary"
                 android:textColorHint="@color/colorWhite"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -36,262 +36,15 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-        <LinearLayout
-            android:id="@+id/ll_genre_1"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_genres_Search"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.8"
             app:layout_constraintTop_toBottomOf="@id/cl_search"
-            android:gravity="center_horizontal">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="170dp"
-                android:layout_height="120dp"
-                app:cardCornerRadius="8dp"
-                android:elevation="5dp"
-                android:layout_marginRight="8dp"
-                app:cardBackgroundColor="@color/red">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="top|right"
-                    android:src="@drawable/ic_acao"/>
-
-                <TextView
-                    android:text="Action"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="24sp"
-                    android:padding="16dp"
-                    android:layout_gravity="bottom|center_horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-
-            </androidx.cardview.widget.CardView>
-
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="170dp"
-                android:layout_height="120dp"
-                app:cardCornerRadius="8dp"
-                android:elevation="5dp"
-                android:layout_marginLeft="8dp"
-                app:cardBackgroundColor="@color/teal">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="top|right"
-                    android:src="@drawable/ic_comedia"/>
-
-                <TextView
-                    android:text="Comedy"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="24sp"
-                    android:padding="16dp"
-                    android:layout_gravity="bottom|center_horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_genre_2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@id/ll_genre_1"
-            android:gravity="center_horizontal">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="170dp"
-                android:layout_height="120dp"
-                app:cardCornerRadius="8dp"
-                android:elevation="5dp"
-                android:layout_marginRight="8dp"
-                app:cardBackgroundColor="@color/purple">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="top|right"
-                    android:src="@drawable/ic_scifi"/>
-
-                <TextView
-                    android:text="Sci-Fi"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="24sp"
-                    android:padding="16dp"
-                    android:layout_gravity="bottom|center_horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-
-            </androidx.cardview.widget.CardView>
-
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="170dp"
-                android:layout_height="120dp"
-                app:cardCornerRadius="8dp"
-                android:elevation="5dp"
-                android:layout_marginLeft="8dp"
-                app:cardBackgroundColor="@color/brown">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="top|right"
-                    android:src="@drawable/ic_aventura"/>
-
-                <TextView
-                    android:text="Adventure"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="24sp"
-                    android:padding="16dp"
-                    android:layout_gravity="bottom|center_horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_genre_3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@id/ll_genre_2"
-            android:gravity="center_horizontal">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="170dp"
-                android:layout_height="120dp"
-                app:cardCornerRadius="8dp"
-                android:elevation="5dp"
-                android:layout_marginRight="8dp"
-                app:cardBackgroundColor="@color/black">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="top|right"
-                    android:src="@drawable/ic_drama"/>
-
-                <TextView
-                    android:text="Drama"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="24sp"
-                    android:padding="16dp"
-                    android:layout_gravity="bottom|center_horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-
-            </androidx.cardview.widget.CardView>
-
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="170dp"
-                android:layout_height="120dp"
-                app:cardCornerRadius="8dp"
-                android:elevation="5dp"
-                android:layout_marginLeft="8dp"
-                app:cardBackgroundColor="@color/yellow">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="top|right"
-                    android:src="@drawable/ic_fantasia"/>
-
-                <TextView
-                    android:text="Fantasy"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="24sp"
-                    android:padding="16dp"
-                    android:layout_gravity="bottom|center_horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_genre_4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@id/ll_genre_3"
-            android:gravity="center_horizontal">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="170dp"
-                android:layout_height="120dp"
-                app:cardCornerRadius="8dp"
-                android:elevation="5dp"
-                android:layout_marginRight="8dp"
-                app:cardBackgroundColor="@color/blue">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="top|right"
-                    android:src="@drawable/ic_musica" />
-
-                <TextView
-                    android:text="Music"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="24sp"
-                    android:padding="16dp"
-                    android:layout_gravity="bottom|center_horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-
-            </androidx.cardview.widget.CardView>
-
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="170dp"
-                android:layout_height="120dp"
-                app:cardCornerRadius="8dp"
-                android:elevation="5dp"
-                android:layout_marginLeft="8dp"
-                app:cardBackgroundColor="@color/lightRed">
-
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="top|right"
-                    android:src="@drawable/ic_romance"/>
-
-                <TextView
-                    android:text="Romance"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="24sp"
-                    android:padding="16dp"
-                    android:layout_gravity="bottom|center_horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-
-<!--        <androidx.recyclerview.widget.RecyclerView-->
-<!--            android:id="@+id/recyclerViewMenu"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="0dp"-->
-<!--            app:layout_constraintHeight_percent="0.2"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/cl_search"-->
-<!--            android:overScrollMode="never"-->
-<!--            android:paddingStart="8dp"-->
-<!--            android:paddingEnd="8dp"-->
-<!--            app:layoutManager="GridLayoutManager"-->
-<!--            tools:listitem="@layout/item_genre"-->
-<!--            tools:spanCount="2" />-->
+            app:layoutManager="GridLayoutManager"
+            tools:listitem="@layout/item_genre"
+            tools:spanCount="2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
