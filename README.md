@@ -11,6 +11,7 @@
 <p align="center">
   <img src="img/home.jpg" width="270" alt="Home">
   <img src="img/anime_detail.jpg" width="270" alt="Anime detail">
+    <img src="img/search.jpg" width="270" alt="Search">
 </p>
 
 <p align="center">
@@ -42,3 +43,7 @@
 ## API
 
 - [jikan.moe API](https://jikan.moe/)
+
+## ICONES
+
+- [flaticon](https://www.flaticon.com/)
