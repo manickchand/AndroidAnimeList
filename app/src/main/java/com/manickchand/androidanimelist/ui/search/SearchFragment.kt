@@ -4,10 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import com.manickchand.androidanimelist.R
+import com.manickchand.androidanimelist.base.BaseFragment
 
-class SearchFragment : Fragment() {
+class SearchFragment : BaseFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -15,5 +15,9 @@ class SearchFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_search, container, false)
+    }
+
+    override fun checkConnection() {
+
     }
 }

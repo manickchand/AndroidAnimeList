@@ -21,7 +21,7 @@
         android:id="@+id/pb_detail_anime"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:visibility="@{viewModel.loading ? View.VISIBLE : View.GONE}"
+        android:visibility="@{viewModel.load ? View.VISIBLE : View.GONE}"
         android:background="@drawable/tv_rounded_border"
         android:backgroundTint="@color/colorPrimary"
         android:layout_gravity="center" />

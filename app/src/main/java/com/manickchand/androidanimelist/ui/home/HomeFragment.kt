@@ -8,21 +8,20 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.manickchand.androidanimelist.R
+import com.manickchand.androidanimelist.base.BaseFragment
 import com.manickchand.androidanimelist.models.Anime
 import com.manickchand.androidanimelist.models.AnimeSlider
 import com.manickchand.androidanimelist.ui.animeDetails.AnimeDetailActivity
-import com.manickchand.androidanimelist.util.IConnectionUtils
 import com.manickchand.androidanimelist.util.hasInternet
 import kotlinx.android.synthetic.main.fragment_home.*
 
-class HomeFragment : Fragment(), IConnectionUtils {
+class HomeFragment : BaseFragment() {
 
     private lateinit var homeViewModel: HomeViewModel
     private var mList:MutableList<Anime> = ArrayList()
@@ -56,7 +55,6 @@ class HomeFragment : Fragment(), IConnectionUtils {
         })
 
         homeViewModel.hasErrorLiveData.observe(this, Observer {error ->
-            pb_top_animes.visibility = View.GONE
             if (error) Toast.makeText(context, "Error get top animes !", Toast.LENGTH_SHORT).show()
         })
 
@@ -64,8 +62,11 @@ class HomeFragment : Fragment(), IConnectionUtils {
             setupViewFlipper(it)
         })
 
-        checkConnection()
+        homeViewModel.loading.observe(this, Observer { load ->
+            pb_top_animes.visibility = if(load) View.VISIBLE else View.GONE
+        })
 
+        checkConnection()
     }
 
 
@@ -75,7 +76,6 @@ class HomeFragment : Fragment(), IConnectionUtils {
 
             layoutManager = GridLayoutManager(activity, 3, RecyclerView.VERTICAL, false)
             setHasFixedSize(true)
-            isNestedScrollingEnabled = false
             addOnScrollListener(object : RecyclerView.OnScrollListener() {
                 override fun onScrolled(
                     recyclerView: RecyclerView, dx: Int, dy: Int
@@ -108,15 +108,14 @@ class HomeFragment : Fragment(), IConnectionUtils {
 
     override fun checkConnection(){
         if(hasInternet(activity)){
-            pb_top_animes.visibility = View.VISIBLE
             homeViewModel.getTopAnimes(pageLoad)
             homeViewModel.getSliderAnimes()
         }else{
-            pb_top_animes.visibility = View.GONE
             Toast.makeText(context, "Connection error !", Toast.LENGTH_SHORT).show()
         }
     }
 
+    //todo binding
     fun setupViewFlipper(list:List<AnimeSlider>){
 
         var inflater = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater //
@@ -139,7 +138,5 @@ class HomeFragment : Fragment(), IConnectionUtils {
         viewFlipper.setOnClickListener{
             viewFlipper.showNext()
         }
-
     }
-
 }
